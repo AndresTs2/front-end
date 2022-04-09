@@ -1,0 +1,57 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="titulo">Listado Personajes</h3>
+                    <p class="titulo">Seleccione la casa de hechicería</p>
+                    <div class="dropdown" align="center">
+                        <div class="form-check form-check-inline">
+                            <input (click)="getPersonaje('slytherin')" class="form-check-input" type="radio" name="flexRadioDefault" id="slytherin">
+                            <label class="form-check-label" for="slytherin">
+                                slytherin
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input (click)="getPersonaje('gryffindor')" class="form-check-input" type="radio" name="flexRadioDefault" id="gryffindor">
+                            <label class="form-check-label" for="gryffindor">
+                                gryffindor
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input (click)="getPersonaje('ravenclaw')" class="form-check-input" type="radio" name="flexRadioDefault" id="ravenclaw">
+                            <label class="form-check-label" for="ravenclaw">
+                                ravenclaw
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input (click)="getPersonaje('hufflepuff')" class="form-check-input" type="radio" name="flexRadioDefault" id="hufflepuff">
+                            <label class="form-check-label" for="hufflepuff">
+                                hufflepuff
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                                       
+                    <h5 class="titulo">Listado de Estudiantes</h5>
+                    <table class="table table-success table-striped table-bordered table-responsive-sm">
+                        <tbody>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Patronus</th>
+                                <th>Año de Nacimiento</th>
+                                <th>Imagen</th>
+                            </tr>
+                            <tr *ngFor="let personaje of listPersonajes">
+                                <td>{{personaje.name}}</td>
+                                <td>{{personaje.patronus}}</td>
+                                <td>{{personaje.yearOfBirth}}</td>
+                                <td><img [src]="personaje.image"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
